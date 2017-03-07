@@ -5,6 +5,7 @@ import init from './init'
 
 import {ArticleCollection} from './models/newsModels'
 import HomeView from './views/homeView'
+import ArticleView from './views/ArticleView'
 
 
 const app=function() {
