@@ -10,4 +10,4 @@ const ArticleCollection=Backbone.Collection.extend({
     }
 })
 
-export ArticleCollection
+export {ArticleCollection}

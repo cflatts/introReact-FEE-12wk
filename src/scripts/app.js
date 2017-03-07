@@ -16,7 +16,7 @@ const app=function() {
         },
 
         _showHome: function() {
-            ReactDOM.render(<HomeView/>, document.querySelector('container'))
+            ReactDOM.render(<HomeView/>, document.querySelector('.container'))
         },
 
         _showDetailPage: function(articleID) {
@@ -29,7 +29,7 @@ const app=function() {
 
         _default: function() {
             location.hash='search/today'
-        }
+        },
 
         initialize: function() {
             Backbone.history.start()
