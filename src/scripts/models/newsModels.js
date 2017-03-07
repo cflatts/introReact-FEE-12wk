@@ -3,7 +3,7 @@ import $ from 'jquery'
 
 export const ArticleCollection=Backbone.Collection.extend({
     url: 'https://api.nytimes.com/svc/search/v2/articlesearch.json',
-    _key: '11eaa2ee2ebb78f1cfb25971ad39c74d',
+    _key: 'fa162f9ec488494abf21f3f3b2225849',
 
     parse: function(apiResp) {
         return apiResp.response.docs

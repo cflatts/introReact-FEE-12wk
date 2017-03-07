@@ -29,12 +29,10 @@ const app=function() {
             const articleColl = new ArticleCollection()
             articleColl.fetch({
                 data: {
-                    q: query,
-                    apikey: this._key
+                    'q': query,
+                    'apikey': articleColl._key
                 }
-            })
-
-            ReactDOM.render(<ArticleView />, document.querySelector('.container'))
+            }).then(() => ReactDOM.render(<ArticleView />, document.querySelector('.container')))
         },
 
         _default: function() {
