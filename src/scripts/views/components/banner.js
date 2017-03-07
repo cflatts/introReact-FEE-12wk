@@ -4,7 +4,7 @@ import React from 'react'
 const Banner=React.createClass({
 
     _handleSearch: function(evt) {
-        evt.preventDefault()
+        // evt.preventDefault()
 
         if(evt.keyCode === 13) {
             location.hash = `search/${evt.target.value}`
