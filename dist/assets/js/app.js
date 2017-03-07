@@ -1,1 +1,1 @@
-console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/testApps/introReact/src/scripts/app.js: Unexpected token, expected , (27:8) while parsing file: /Users/caitlinflattery/Documents/TIY/testApps/introReact/src/scripts/app.js");
+console.error("SyntaxError: /Users/caitlinflattery/Documents/TIY/testApps/introReact/src/scripts/app.js: Unexpected token, expected , (34:8) while parsing file: /Users/caitlinflattery/Documents/TIY/testApps/introReact/src/scripts/app.js");

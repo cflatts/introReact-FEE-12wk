@@ -3,13 +3,20 @@ import ReactDOM from 'react-dom'
 import Backbone from 'backbone'
 import init from './init'
 
+import {ArticleCollection} from './models/newsModels'
+
 
 const app = function() {
     const Router = Backbone.Router.extend({
         routes: {
+            'home': '_showHome',
             'detail/:articleID': '_showDetailPage',
             'search/:query': '_doArticleSearch',
             '*default': '_default'
+        },
+
+        _showHome: function() {
+            
         },
 
         _showDetailPage: function(articleID) {
