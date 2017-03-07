@@ -6,8 +6,8 @@ import init from './init'
 import {ArticleCollection} from './models/newsModels'
 
 
-const app = function() {
-    const Router = Backbone.Router.extend({
+const app=function() {
+    const Router=Backbone.Router.extend({
         routes: {
             'home': '_showHome',
             'detail/:articleID': '_showDetailPage',
@@ -16,7 +16,7 @@ const app = function() {
         },
 
         _showHome: function() {
-            
+
         },
 
         _showDetailPage: function(articleID) {
