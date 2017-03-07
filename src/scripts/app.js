@@ -16,7 +16,7 @@ const app=function() {
         },
 
         _showHome: function() {
-
+            ReactDOM.render(<HomeView/>, document.querySelector('container'))
         },
 
         _showDetailPage: function(articleID) {
