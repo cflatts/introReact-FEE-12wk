@@ -26,7 +26,7 @@ const app=function() {
         },
 
         _doArticleSearch: function(query) {
-
+            ReactDOM.render(<ArticleView/>, document.querySelector('.container'))
         },
 
         _default: function() {

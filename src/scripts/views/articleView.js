@@ -4,6 +4,7 @@ import Banner from './components/banner'
 
 const ArticleView=React.createClass({
     render: function() {
+        console.log(this)
         return (
             <div className='articleView'>
                 <Banner/>
