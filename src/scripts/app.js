@@ -26,6 +26,14 @@ const app=function() {
         },
 
         _doArticleSearch: function(query) {
+            const articleColl = new ArticleCollection()
+            articleColl.fetch({
+                data: {
+                    q: query,
+                    apikey: this._key
+                }
+            })
+
             ReactDOM.render(<ArticleView />, document.querySelector('.container'))
         },
 
