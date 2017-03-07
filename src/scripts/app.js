@@ -5,7 +5,7 @@ import init from './init'
 
 import {ArticleCollection} from './models/newsModels'
 import HomeView from './views/homeView'
-import ArticleView from './views/ArticleView'
+import ArticleView from './views/articleView'
 
 
 const app=function() {
@@ -27,12 +27,15 @@ const app=function() {
 
         _doArticleSearch: function(query) {
             const articleColl = new ArticleCollection()
-            articleColl.fetch({
+            var promise=articleColl.fetch({
                 data: {
                     'q': query,
                     'apikey': articleColl._key
                 }
-            }).then(() => ReactDOM.render(<ArticleView />, document.querySelector('.container')))
+            }).then(() => ReactDOM.render(<ArticleView collection={articleColl}/>, document.querySelector('.container')))
+            // promise.then(function() {
+            //     ReactDOM.render(<ArticleView collection={articleColl}/>, document.querySelector('.container'))
+            // })
         },
 
         _default: function() {
