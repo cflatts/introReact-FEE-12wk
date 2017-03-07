@@ -4,6 +4,7 @@ import Backbone from 'backbone'
 import init from './init'
 
 import {ArticleCollection} from './models/newsModels'
+import HomeView from './views/homeView'
 
 
 const app=function() {

@@ -6,13 +6,15 @@ const Banner=React.createClass({
     _handleSearch: function(evt) {
         evt.preventDefault()
 
-        evt.keyCode === 13 ? location.hash = `search/${evt.target.value}`: location.hash='home'
+        if(evt.keyCode === 13) {
+            location.hash = `search/${evt.target.value}`
+        }
     },
 
     render: function() {
         return (
             <div className='banner'>
-                <h1>The People`'`s News</h1>
+                <h1>The Peoples News</h1>
                 <input type='text' onKeyDown={this._handleSearch}/>
                 <a href='#home'>Home</a>
             </div>
