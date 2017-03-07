@@ -8,6 +8,7 @@ const Banner=React.createClass({
 
         if(evt.keyCode === 13) {
             location.hash = `search/${evt.target.value}`
+            evt.target.value=''
         }
     },
 
