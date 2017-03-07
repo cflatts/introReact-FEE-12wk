@@ -7,14 +7,9 @@ import init from './init'
 const app = function() {
     const Router = Backbone.Router.extend({
         routes: {
-            'home': '_goHome',
             'detail/:articleID': '_showDetailPage',
             'search/:query': '_doArticleSearch',
-            '*catchall': '_redirect'
-        },
-
-        _goHome: function() {
-
+            '*default': '_default'
         },
 
         _showDetailPage: function(articleID) {
@@ -24,6 +19,10 @@ const app = function() {
         _doArticleSearch: function(query) {
 
         },
+
+        _default: function() {
+            location.hash='search/today'
+        }
 
         initialize: function() {
             Backbone.history.start()
