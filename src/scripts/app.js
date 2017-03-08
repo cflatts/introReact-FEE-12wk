@@ -39,7 +39,7 @@ const app=function() {
         },
 
         _default: function() {
-            location.hash='search/today'
+            location.hash='home'
         },
 
         initialize: function() {
