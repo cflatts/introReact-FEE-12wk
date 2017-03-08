@@ -39,7 +39,8 @@ const Article=React.createClass({
         return (
             <div className='article'>
                 <h3>{this.props.model.get('headline').main}</h3>
-                <h1>By: {this.props.model.get('byline').original}</h1>
+                <h5>By: {this.props.model.get('byline').original}</h5>
+                <hr/>
             </div>
         )
     }
