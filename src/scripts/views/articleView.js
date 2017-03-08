@@ -7,7 +7,7 @@ const ArticleView=React.createClass({
         return (
             <div className='articleView'>
                 <Banner/>
-                <SearchResults articleColl={this.props.collection}/>
+                <SearchResults collection={this.props.articleColl}/>
             </div>
         )
     }
@@ -17,7 +17,7 @@ const SearchResults=React.createClass({
     render: function() {
         return (
             <div className='searchResults'>
-                
+
             </div>
         )
     }

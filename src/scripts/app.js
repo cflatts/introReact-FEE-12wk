@@ -32,7 +32,7 @@ const app=function() {
                     'q': query,
                     'apikey': articleColl._key
                 }
-            }).then(() => ReactDOM.render(<ArticleView collection={articleColl}/>, document.querySelector('.container')))
+            }).then(() => ReactDOM.render(<ArticleView articleColl={articleColl}/>, document.querySelector('.container')))
             // promise.then(function() {
             //     ReactDOM.render(<ArticleView collection={articleColl}/>, document.querySelector('.container'))
             // })
