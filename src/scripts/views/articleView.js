@@ -20,7 +20,7 @@ const SearchResults=React.createClass({
         let articleArr=this.props.collection.models
 
         for(var i=0; i<articleArr.length;i++) {
-            jsxArr.push(<Article model={articleArr[i]}/>)
+            jsxArr.push(<Article model={articleArr[i]} key={articleArr[i].cid}/>)
         }
         return jsxArr
     },
@@ -38,7 +38,8 @@ const Article=React.createClass({
     render: function() {
         return (
             <div className='article'>
-                <h3></h3>
+                <h3>{this.props.model.get('headline').main}</h3>
+                <h1>By: {this.props.model.get('byline').original}</h1>
             </div>
         )
     }
