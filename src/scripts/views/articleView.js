@@ -55,7 +55,7 @@ const Article=React.createClass({
         }
 
         if(this.state.pShowing) {
-            paraStyle.display = 'block'
+            paraStyle.display='block'
         }
 
         return (
