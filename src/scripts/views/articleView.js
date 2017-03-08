@@ -38,7 +38,7 @@ const Article=React.createClass({
 
     _toggleParagraph: function() {
         this.setState({
-            pShowing: true
+            pShowing: this.state.pShowing ? false : true
         })
     },
 
@@ -54,15 +54,18 @@ const Article=React.createClass({
             display: 'none'
         }
 
+        let buttonSymbol='+'
+
         if(this.state.pShowing) {
             paraStyle.display='block'
+            buttonSymbol='-'
         }
 
         return (
             <div className='article'>
                 <h3>{this.props.model.get('headline').main}</h3>
                 <h5>{this.props.model.get('byline').original}</h5>
-                <button onClick={this._toggleParagraph}>+</button>
+                <button onClick={this._toggleParagraph}>{buttonSymbol}</button>
                 <p style={paraStyle}>{this.props.model.get('lead_paragraph')}</p>
                 <hr/>
             </div>
