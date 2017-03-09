@@ -4,15 +4,12 @@ import Banner from './components/banner'
 const ArticleView=React.createClass({
 
     componentWillMount: function() {
-
-        const boundUpdater = function() {
+        this.props.articleColl.on('sync', () => {
             this.setState({
                 loaded: true,
                 collection: this.state.collection
             })
-        }.bind(this)
-
-        this.props.articleColl.on('sync', boundUpdater)
+        })
     },
 
     getInitialState: function() {
@@ -23,10 +20,11 @@ const ArticleView=React.createClass({
     },
 
     render: function() {
+        console.log(this.state)
         return (
             <div className='articleView'>
                 <Banner/>
-                <SearchResults collection={this.state.articleColl}/>
+                <SearchResults collection={this.state.collection}/>
             </div>
         )
     }
