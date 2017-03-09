@@ -3,6 +3,15 @@ import React from 'react'
 import Banner from './components/banner'
 
 const ArticleView=React.createClass({
+
+    
+
+    getInitialState: function() {
+        return {
+            collection: this.props.articleColl
+        }
+    },
+
     render: function() {
         return (
             <div className='articleView'>
