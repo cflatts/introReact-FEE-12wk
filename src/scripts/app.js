@@ -25,17 +25,28 @@ const app=function() {
 
         },
 
+        // _doArticleSearchWithPromise: function(query) {
+        //     const articleColl = new ArticleCollection()
+        //     var promise=articleColl.fetch({
+        //         data: {
+        //             'q': query,
+        //             'apikey': articleColl._key
+        //         }
+        //     }).then(() => ReactDOM.render(<ArticleView articleColl={articleColl}/>, document.querySelector('.container')))
+        //     // promise.then(function() {
+        //     //     ReactDOM.render(<ArticleView collection={articleColl}/>, document.querySelector('.container'))
+        //     // })
+        // },
+
         _doArticleSearch: function(query) {
-            const articleColl = new ArticleCollection()
-            var promise=articleColl.fetch({
+            const articleColl=new ArticleCollection()
+            articleColl.fetch({
                 data: {
                     'q': query,
                     'apikey': articleColl._key
                 }
-            }).then(() => ReactDOM.render(<ArticleView articleColl={articleColl}/>, document.querySelector('.container')))
-            // promise.then(function() {
-            //     ReactDOM.render(<ArticleView collection={articleColl}/>, document.querySelector('.container'))
-            // })
+            })
+            ReactDOM.render(<ArticleView articleColl={articleColl}/>, document.querySelector('.container'))
         },
 
         _default: function() {
