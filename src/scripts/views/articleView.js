@@ -1,16 +1,18 @@
 import React from 'react'
-
 import Banner from './components/banner'
 
 const ArticleView=React.createClass({
 
     componentWillMount: function() {
-        this.props.articleColl.on('sync', () => {
+
+        const boundUpdater = function() {
             this.setState({
                 loaded: true,
                 collection: this.state.collection
             })
-        })
+        }.bind(this)
+
+        this.props.articleColl.on('sync', boundUpdater)
     },
 
     getInitialState: function() {
@@ -24,7 +26,7 @@ const ArticleView=React.createClass({
         return (
             <div className='articleView'>
                 <Banner/>
-                <SearchResults collection={this.props.articleColl}/>
+                <SearchResults collection={this.state.articleColl}/>
             </div>
         )
     }
