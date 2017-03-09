@@ -1,13 +1,13 @@
 import React from 'react'
 import Banner from './components/banner'
 
-const ArticleView=React.createClass({
+const ArticleView = React.createClass({
 
     componentWillMount: function() {
         this.props.articleColl.on('sync', () => {
             this.setState({
                 loaded: true,
-                collection: this.state.collection
+                collection: this.state.collection,
             })
         })
     },
@@ -15,7 +15,7 @@ const ArticleView=React.createClass({
     getInitialState: function() {
         return {
             collection: this.props.articleColl,
-            loaded: false
+            loaded: false,
         }
     },
 
@@ -30,13 +30,13 @@ const ArticleView=React.createClass({
     }
 })
 
-const SearchResults=React.createClass({
+const SearchResults = React.createClass({
 
     _makeArticles: function() {
-        let jsxArr=[]
-        let articleArr=this.props.collection.models
+        let jsxArr = []
+        let articleArr = this.props.collection.models
 
-        for(var i=0; i<articleArr.length; i++) {
+        for (var i = 0; i < articleArr.length; i++) {
             jsxArr.push(<Article model={articleArr[i]} key={articleArr[i].cid}/>)
         }
         return jsxArr
